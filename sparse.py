@@ -1,5 +1,5 @@
 from numpy import ndarray
-from typing import Union, List, NewType
+from typing import Union
 import _coo
 import _dok
 
@@ -7,6 +7,11 @@ _FORMATS = {
 	'dok': _dok,
 	'coo': _coo
 }
+
+__help__ = '''Methods:
+	- Dictionary of Keys: 'dok'
+	- Coordinate List:    'coo'
+	'''
 
 __doc__ = '''matio.sparse provides simple io callables for sparse matrix formats'''
 
@@ -42,4 +47,3 @@ def write(data: Union[ndarray, list], fn: str, method: str = 'dok', delimiter: s
 		return _FORMATS[method].sparsify(data=data, fn=fn, delimiter=delimiter)
 	except KeyError:
 		raise LookupError(f"unknown method: {method}")
-
