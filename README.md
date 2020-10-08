@@ -8,6 +8,6 @@ Library for fast input/output of sparse datasets.
 
 ### Supported Methods
 ------------
-Dictionary of Keys: 'dok'
-Coordinate List:    'coo'
+- Dictionary of Keys: 'dok'
+- Coordinate List:    'coo'
 
